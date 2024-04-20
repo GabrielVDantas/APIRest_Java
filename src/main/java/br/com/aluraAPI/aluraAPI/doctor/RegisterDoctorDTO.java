@@ -14,4 +14,8 @@ public record RegisterDoctorDTO(
         AddressDTO addressDTO
 
 ) {
+
+    public Doctor convertDoctorDTOtoDoctor(RegisterDoctorDTO registerDoctorDTO) {
+        return new Doctor(registerDoctorDTO);
+    }
 }

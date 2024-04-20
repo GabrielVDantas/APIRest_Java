@@ -1,5 +1,6 @@
 package br.com.aluraAPI.aluraAPI.endereco;
 
+import br.com.aluraAPI.aluraAPI.doctor.RegisterDoctorDTO;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +27,14 @@ public class Address {
     private String complement;
 
     private String number;
+
+    public Address(AddressDTO addressDTO) {
+        this.publicPlace = addressDTO.publicPlace();
+        this.neighborhood = addressDTO.neighborhood();
+        this.cep = addressDTO.cep();
+        this.city = addressDTO.city();
+        this.fu = addressDTO.fu();
+        this.complement = addressDTO.complement();
+        this.number = addressDTO.number();
+    }
 }
