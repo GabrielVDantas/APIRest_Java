@@ -1,6 +1,5 @@
-package br.com.aluraAPI.aluraAPI.endereco;
+package br.com.aluraAPI.aluraAPI.address;
 
-import br.com.aluraAPI.aluraAPI.doctor.RegisterDoctorDTO;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Address {
 
-    private  String publicPlace;
+    private String publicPlace;
 
     private String neighborhood;
 

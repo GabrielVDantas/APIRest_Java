@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.endereco;
+package br.com.aluraAPI.aluraAPI.address;
 
 public record AddressDTO(
 

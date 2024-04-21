@@ -1,6 +1,6 @@
 package br.com.aluraAPI.aluraAPI.doctor;
 
-import br.com.aluraAPI.aluraAPI.endereco.AddressDTO;
+import br.com.aluraAPI.aluraAPI.address.AddressDTO;
 
 public record RegisterDoctorDTO(
         String name,
@@ -12,10 +12,9 @@ public record RegisterDoctorDTO(
         Specialty specialty,
 
         AddressDTO addressDTO
-
 ) {
 
-    public Doctor convertDoctorDTOtoDoctor(RegisterDoctorDTO registerDoctorDTO) {
+    public Doctor convertDoctorDTO(RegisterDoctorDTO registerDoctorDTO) {
         return new Doctor(registerDoctorDTO);
     }
 }

@@ -1,6 +1,6 @@
 package br.com.aluraAPI.aluraAPI.doctor;
 
-import br.com.aluraAPI.aluraAPI.endereco.Address;
+import br.com.aluraAPI.aluraAPI.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,8 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Table(name = "medicos")
-@Entity(name = "Medico")
+@Table(name = "doctors")
+@Entity(name = "Doctor")
 public class Doctor {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

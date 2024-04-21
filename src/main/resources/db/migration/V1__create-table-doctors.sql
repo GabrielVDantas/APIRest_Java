@@ -1,4 +1,5 @@
 
+
 create table doctors(
 
     id bigint not null auto_increment,
