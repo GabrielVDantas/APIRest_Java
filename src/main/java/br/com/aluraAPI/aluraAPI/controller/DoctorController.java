@@ -34,4 +34,9 @@ public class DoctorController {
         Doctor doctor = doctorRepository.getReferenceById(updateDoctorInfoDTO.id());
         doctor.updateDoctorInformation(updateDoctorInfoDTO);
     }
+
+    @DeleteMapping("/delete_doctor")
+    public void deleteDoctor() {
+
+    }
 }
