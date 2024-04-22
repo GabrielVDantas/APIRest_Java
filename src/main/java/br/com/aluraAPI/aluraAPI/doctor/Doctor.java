@@ -38,4 +38,5 @@ public class Doctor {
         this.specialty = registerDoctorDTO.specialty();
         this.address = new Address(registerDoctorDTO.addressDTO());
     }
+
 }

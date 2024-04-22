@@ -7,6 +7,9 @@ import br.com.aluraAPI.aluraAPI.doctor.RegisterDoctorDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,8 +29,7 @@ public class DoctorController {
     }
 
     @GetMapping("/get_registered_doctors")
-    public List<ListDoctorsDTO> getRegisteredDoctors() {
-        return doctorRepository.findAll().stream()
-                .map(ListDoctorsDTO::new).toList();
+    public Page<ListDoctorsDTO> getRegisteredDoctors(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
+        return doctorRepository.findAll(pageable).map(ListDoctorsDTO::new);
     }
 }
