@@ -39,4 +39,15 @@ public class Doctor {
         this.address = new Address(registerDoctorDTO.addressDTO());
     }
 
+    public void updateDoctorInformation(UpdateDoctorInfoDTO updateDoctorInfoDTO) {
+        if (updateDoctorInfoDTO != null) {
+            this.name = updateDoctorInfoDTO.name();
+        }
+        if (updateDoctorInfoDTO.phone() != null) {
+            this.phone = updateDoctorInfoDTO.phone();
+        }
+        if (updateDoctorInfoDTO.addressDTO() != null) {
+            this.address.updateAddressInformation(updateDoctorInfoDTO.addressDTO());
+        }
+    }
 }
