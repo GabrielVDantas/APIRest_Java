@@ -30,6 +30,8 @@ public class Doctor {
     @Embedded
     private Address address;
 
+    private boolean active;
+
     public Doctor(RegisterDoctorDTO registerDoctorDTO) {
         this.name = registerDoctorDTO.name();
         this.email = registerDoctorDTO.email();
@@ -37,6 +39,7 @@ public class Doctor {
         this.crm = registerDoctorDTO.crm();
         this.specialty = registerDoctorDTO.specialty();
         this.address = new Address(registerDoctorDTO.addressDTO());
+        this.active = true;
     }
 
     public void updateDoctorInformation(UpdateDoctorInfoDTO updateDoctorInfoDTO) {
@@ -49,5 +52,9 @@ public class Doctor {
         if (updateDoctorInfoDTO.addressDTO() != null) {
             this.address.updateAddressInformation(updateDoctorInfoDTO.addressDTO());
         }
+    }
+
+    public void inactivate(Long id) {
+        this.active = false;
     }
 }

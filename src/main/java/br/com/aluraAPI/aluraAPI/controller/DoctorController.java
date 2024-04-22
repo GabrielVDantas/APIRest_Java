@@ -25,7 +25,7 @@ public class DoctorController {
 
     @GetMapping("/get_registered_doctors")
     public Page<ListDoctorsDTO> getRegisteredDoctors(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
-        return doctorRepository.findAll(pageable).map(ListDoctorsDTO::new);
+        return doctorRepository.findAllByActiveTrue(pageable).map(ListDoctorsDTO::new);
     }
 
     @PutMapping("/update_doctor_info")
@@ -38,6 +38,7 @@ public class DoctorController {
     @DeleteMapping("/delete_doctor/{id}")
     @Transactional
     public void deleteDoctor(@PathVariable Long id) {
-        doctorRepository.deleteById(id);
+        Doctor doctor = doctorRepository.getReferenceById(id);
+        doctor.inactivate(id);
     }
 }
