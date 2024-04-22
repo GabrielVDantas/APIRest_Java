@@ -32,4 +32,9 @@ public class DoctorController {
     public Page<ListDoctorsDTO> getRegisteredDoctors(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
         return doctorRepository.findAll(pageable).map(ListDoctorsDTO::new);
     }
+
+    @PutMapping("/alter_doctor_info")
+    public void alterDoctorInformation() {
+
+    }
 }

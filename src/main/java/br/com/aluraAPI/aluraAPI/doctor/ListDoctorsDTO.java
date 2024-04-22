@@ -2,6 +2,8 @@ package br.com.aluraAPI.aluraAPI.doctor;
 
 public record ListDoctorsDTO(
 
+        Long id,
+
         String name,
 
         String email,
@@ -12,6 +14,6 @@ public record ListDoctorsDTO(
 ) {
 
     public ListDoctorsDTO(Doctor doctor) {
-        this(doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getSpecialty());
+        this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getSpecialty());
     }
 }
