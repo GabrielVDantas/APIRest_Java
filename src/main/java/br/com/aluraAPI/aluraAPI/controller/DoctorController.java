@@ -2,6 +2,7 @@ package br.com.aluraAPI.aluraAPI.controller;
 
 import br.com.aluraAPI.aluraAPI.doctor.Doctor;
 import br.com.aluraAPI.aluraAPI.doctor.DoctorRepository;
+import br.com.aluraAPI.aluraAPI.doctor.ListDoctorsDTO;
 import br.com.aluraAPI.aluraAPI.doctor.RegisterDoctorDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -25,7 +26,8 @@ public class DoctorController {
     }
 
     @GetMapping("/get_registered_doctors")
-    public List<Doctor> getRegisteredDoctors() {
-        return null;
+    public List<ListDoctorsDTO> getRegisteredDoctors() {
+        return doctorRepository.findAll().stream()
+                .map(ListDoctorsDTO::new).toList();
     }
 }
