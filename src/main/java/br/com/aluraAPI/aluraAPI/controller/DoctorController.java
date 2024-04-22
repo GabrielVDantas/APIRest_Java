@@ -35,8 +35,9 @@ public class DoctorController {
         doctor.updateDoctorInformation(updateDoctorInfoDTO);
     }
 
-    @DeleteMapping("/delete_doctor")
-    public void deleteDoctor() {
-
+    @DeleteMapping("/delete_doctor/{id}")
+    @Transactional
+    public void deleteDoctor(@PathVariable Long id) {
+        doctorRepository.deleteById(id);
     }
 }
