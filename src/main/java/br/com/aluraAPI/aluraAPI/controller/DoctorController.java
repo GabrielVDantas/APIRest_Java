@@ -6,10 +6,9 @@ import br.com.aluraAPI.aluraAPI.doctor.RegisterDoctorDTO;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/doctor")
@@ -23,5 +22,10 @@ public class DoctorController {
     public void registerDoctor(@RequestBody @Valid RegisterDoctorDTO registerDoctorDTO) {
         Doctor doctor = registerDoctorDTO.convertDoctorDTO(registerDoctorDTO);
         doctorRepository.save(doctor);
+    }
+
+    @GetMapping("/get_registered_doctors")
+    public List<Doctor> getRegisteredDoctors() {
+        return null;
     }
 }
