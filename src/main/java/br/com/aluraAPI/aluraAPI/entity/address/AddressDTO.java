@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.address;
+package br.com.aluraAPI.aluraAPI.entity.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

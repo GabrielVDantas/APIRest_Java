@@ -1,6 +1,6 @@
 package br.com.aluraAPI.aluraAPI.controller;
 
-import br.com.aluraAPI.aluraAPI.doctor.*;
+import br.com.aluraAPI.aluraAPI.entity.doctor.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

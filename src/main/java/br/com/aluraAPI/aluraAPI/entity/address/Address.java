@@ -1,6 +1,5 @@
-package br.com.aluraAPI.aluraAPI.address;
+package br.com.aluraAPI.aluraAPI.entity.address;
 
-import br.com.aluraAPI.aluraAPI.doctor.UpdateDoctorInfoDTO;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

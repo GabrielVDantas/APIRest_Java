@@ -1,6 +1,6 @@
-package br.com.aluraAPI.aluraAPI.doctor;
+package br.com.aluraAPI.aluraAPI.entity.doctor;
 
-import br.com.aluraAPI.aluraAPI.address.AddressDTO;
+import br.com.aluraAPI.aluraAPI.entity.address.AddressDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
