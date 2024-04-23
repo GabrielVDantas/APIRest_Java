@@ -1,20 +1,21 @@
 
 
-create table doctors(
+create table doctors
+(
 
-    id bigint not null auto_increment,
-    name varchar(100) not null,
-    email varchar(100) not null unique,
-    phone varchar(13) not null unique,
-    crm varchar(6) not null unique,
-    specialty varchar(25) not null,
-    publicPlace varchar(100) not null,
-    neighborhood varchar(100) not null,
-    cep char(9) not null,
-    city varchar(100) not null,
-    fu char(2) not null,
-    complement varchar(100) not null,
-    number varchar(100) not null,
+    id bigint NOT NULL auto_increment,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone CHAR(13) NOT NULL UNIQUE,
+    crm CHAR(6) NOT NULL UNIQUE,
+    specialty VARCHAR(25) NOT NULL,
+    publicPlace VARCHAR(100) NOT NULL,
+    neighborhood VARCHAR(100) NOT NULL,
+    cep char(9) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    fu char(2) NOT NULL,
+    complement VARCHAR(100) NOT NULL,
+    number VARCHAR(100) NOT NULL,
 
     primary key(id)
 );
