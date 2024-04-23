@@ -4,7 +4,12 @@ import br.com.aluraAPI.aluraAPI.entity.patient.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/patient")
@@ -21,8 +26,8 @@ public class PatientController {
     }
 
     @GetMapping("get_registered_patients")
-    public void getRegisteredPatients() {
-
+    public Page<ListPatientDTO> getRegisteredPatients(@PageableDefault Pageable pageable) {
+        return patientRepository.findAllByActiveTrue(pageable).map(ListPatientDTO::new);
     }
 
     @PutMapping("update_patient_information")
@@ -36,6 +41,6 @@ public class PatientController {
     @Transactional
     public void deletePatient(DeletePatientDTO deletePatientDTO) {
         Patient patient = patientRepository.getReferenceById(deletePatientDTO.id());
-        patientRepository.deleteById(patient.getId());
+        patient.setActiveAsFalse(patient.getId());
     }
 }

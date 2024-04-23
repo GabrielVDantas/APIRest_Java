@@ -54,7 +54,7 @@ public class Doctor {
         }
     }
 
-    public void inactivate(Long id) {
+    public void setActiveAsFalse(Long id) {
         this.active = false;
     }
 }

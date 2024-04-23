@@ -39,6 +39,6 @@ public class DoctorController {
     @Transactional
     public void deleteDoctor(@PathVariable Long id) {
         Doctor doctor = doctorRepository.getReferenceById(id);
-        doctor.inactivate(id);
+        doctor.setActiveAsFalse(id);
     }
 }

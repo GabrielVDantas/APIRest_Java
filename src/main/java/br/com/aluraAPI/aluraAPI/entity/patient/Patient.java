@@ -29,12 +29,15 @@ public class Patient {
     @Embedded
     private Address address;
 
+    private boolean active;
+
     public Patient(RegisterPatientDTO registerPatientDTO) {
         this.name = registerPatientDTO.name();
         this.email = registerPatientDTO.email();
         this.phone = registerPatientDTO.phone();
         this.cpf = registerPatientDTO.cpf();
         this.address = new Address(registerPatientDTO.addressDTO());
+        this.active = true;
     }
 
     public void updatePatientInformation(UpdatePatientInfoDTO updatePatientInfoDTO) {
@@ -47,5 +50,9 @@ public class Patient {
         if (updatePatientInfoDTO.addressDTO() != null) {
             this.address.updateAddressInformation(updatePatientInfoDTO.addressDTO());
         }
+    }
+
+    public void setActiveAsFalse(Long id) {
+        this.active = false;
     }
 }
