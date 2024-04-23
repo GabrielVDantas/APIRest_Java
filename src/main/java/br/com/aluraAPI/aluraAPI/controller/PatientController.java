@@ -1,9 +1,6 @@
 package br.com.aluraAPI.aluraAPI.controller;
 
-import br.com.aluraAPI.aluraAPI.entity.patient.Patient;
-import br.com.aluraAPI.aluraAPI.entity.patient.PatientRepository;
-import br.com.aluraAPI.aluraAPI.entity.patient.RegisterPatientDTO;
-import br.com.aluraAPI.aluraAPI.entity.patient.UpdatePatientInfoDTO;
+import br.com.aluraAPI.aluraAPI.entity.patient.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +30,12 @@ public class PatientController {
     public void updatePatientInformation(@RequestBody @Valid UpdatePatientInfoDTO updatePatientInfoDTO) {
         Patient patient = patientRepository.getReferenceById(updatePatientInfoDTO.id());
         patient.updatePatientInformation(updatePatientInfoDTO);
+    }
+
+    @DeleteMapping("delete_patient")
+    @Transactional
+    public void deletePatient(DeletePatientDTO deletePatientDTO) {
+        Patient patient = patientRepository.getReferenceById(deletePatientDTO.id());
+        patientRepository.deleteById(patient.getId());
     }
 }
