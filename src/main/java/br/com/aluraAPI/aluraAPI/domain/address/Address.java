@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.entity.address;
+package br.com.aluraAPI.aluraAPI.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,8 @@
-package br.com.aluraAPI.aluraAPI.entity.patient;
+package br.com.aluraAPI.aluraAPI.domain.patient;
 
-import br.com.aluraAPI.aluraAPI.entity.address.AddressDTO;
+import br.com.aluraAPI.aluraAPI.domain.address.AddressDTO;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,6 +12,7 @@ public record RegisterPatientDTO(
         String name,
 
         @NotBlank(message = "Preencha o campo Email")
+        @Email
         String email,
 
         @NotBlank(message = "Preencha o campo Telefone")

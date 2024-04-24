@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.entity.patient;
+package br.com.aluraAPI.aluraAPI.domain.patient;
 
 public record ListPatientDTO(
 

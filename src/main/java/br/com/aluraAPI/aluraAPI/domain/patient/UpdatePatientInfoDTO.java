@@ -1,7 +1,6 @@
-package br.com.aluraAPI.aluraAPI.entity.patient;
+package br.com.aluraAPI.aluraAPI.domain.patient;
 
-import br.com.aluraAPI.aluraAPI.entity.address.AddressDTO;
-import jakarta.persistence.Id;
+import br.com.aluraAPI.aluraAPI.domain.address.AddressDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

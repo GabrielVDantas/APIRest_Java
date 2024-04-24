@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.entity.doctor;
+package br.com.aluraAPI.aluraAPI.domain.doctor;
 
 public enum Specialty {
 

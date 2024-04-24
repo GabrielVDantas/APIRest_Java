@@ -1,6 +1,6 @@
 package br.com.aluraAPI.aluraAPI.controller;
 
-import br.com.aluraAPI.aluraAPI.entity.patient.*;
+import br.com.aluraAPI.aluraAPI.domain.patient.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,6 @@ public class PatientController {
         Patient patient = registerPatientDTO.convertPatientDTO(registerPatientDTO);
         patientRepository.save(patient);
 
-        // Construindo a URI manualmente
         URI uri = uriBuilder.path("/patients/{id}").buildAndExpand(patient.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DetailedPatientDTO(patient));

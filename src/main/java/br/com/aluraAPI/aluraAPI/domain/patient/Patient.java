@@ -1,7 +1,6 @@
-package br.com.aluraAPI.aluraAPI.entity.patient;
+package br.com.aluraAPI.aluraAPI.domain.patient;
 
-import br.com.aluraAPI.aluraAPI.entity.address.Address;
-import br.com.aluraAPI.aluraAPI.entity.address.AddressDTO;
+import br.com.aluraAPI.aluraAPI.domain.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 

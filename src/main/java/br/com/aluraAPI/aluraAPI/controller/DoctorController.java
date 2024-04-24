@@ -1,6 +1,6 @@
 package br.com.aluraAPI.aluraAPI.controller;
 
-import br.com.aluraAPI.aluraAPI.entity.doctor.*;
+import br.com.aluraAPI.aluraAPI.domain.doctor.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +57,7 @@ public class DoctorController {
     @GetMapping("/detail_doctor/{id}")
     public ResponseEntity detailingDoctor(@PathVariable Long id) {
         Doctor doctor = doctorRepository.getReferenceById(id);
+
         return ResponseEntity.ok(new DetailedDoctorDataDTO(doctor));
     }
 }
