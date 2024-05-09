@@ -1,4 +1,4 @@
-package br.com.aluraAPI.aluraAPI.domain.User;
+package br.com.aluraAPI.aluraAPI.domain.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,7 +22,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String login;
+    private String email;
 
     private String password;
 
@@ -37,7 +37,7 @@ public class User implements UserDetails {
     }
     @Override
     public String getUsername() {
-        return login;
+        return email;
     }
 
     @Override
