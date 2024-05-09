@@ -1,6 +1,8 @@
 package br.com.aluraAPI.aluraAPI.controller;
 
 import br.com.aluraAPI.aluraAPI.domain.user.AuthenticationInfoDTO;
+import br.com.aluraAPI.aluraAPI.domain.user.User;
+import br.com.aluraAPI.aluraAPI.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +21,14 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping("/start_login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationInfoDTO authenticationInfoDTO) {
         var token = new UsernamePasswordAuthenticationToken(authenticationInfoDTO.email(), authenticationInfoDTO.password());
         Authentication authentication = authenticationManager.authenticate(token);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(tokenService.tokenGeneretor((User) authentication.getPrincipal()));
     }
 }

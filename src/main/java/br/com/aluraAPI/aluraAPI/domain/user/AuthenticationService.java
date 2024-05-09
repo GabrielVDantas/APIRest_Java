@@ -1,5 +1,6 @@
 package br.com.aluraAPI.aluraAPI.domain.user;
 
+import br.com.aluraAPI.aluraAPI.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
